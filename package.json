@@ -1,0 +1,29 @@
+{
+  "name": "goit-node-hw-01-contacts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "start:dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DukaDima/goit-node-hw-01-contacts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DukaDima/goit-node-hw-01-contacts/issues"
+  },
+  "homepage": "https://github.com/DukaDima/goit-node-hw-01-contacts#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^8.3.0",
+    "uuid": "^8.3.2"
+  }
+}

@@ -2,7 +2,7 @@ const fs = require("fs/promises");
 const path = require("path");
 const crypto = require("crypto");
 
-const contactsPath = path.join(__dirname, "db", "contacts.json");
+const contactsPath = path.join(__dirname, "contacts", "contacts.json");
 
 const contactsData = async () => {
   const result = await fs.readFile(contactsPath, "utf8");

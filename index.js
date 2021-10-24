@@ -1,11 +1,7 @@
 const { Command } = require("commander");
 const chalk = require("chalk");
-const {
-  listContacts,
-  addContact,
-  getContactById,
-  removeContact,
-} = require("./contacts");
+
+const contactsOperations = require("./contacts");
 
 const program = new Command();
 program
@@ -23,12 +19,12 @@ const argv = program.opts();
   try {
     switch (action) {
       case "list":
-        const contacts = await listContacts();
-        console.log(contacts);
+        const contacts = await contactsOperations.listContacts();
+        console.table(contacts);
         break;
 
       case "get":
-        const contactById = await getContactById(id);
+        const contactById = await contactsOperations.getContactById(id);
         if (contactById) {
           console.log(chalk.greenBright("Contact found"));
           console.log(contactById);
@@ -38,13 +34,13 @@ const argv = program.opts();
         break;
 
       case "add":
-        const contact = await addContact(name, email, phone);
+        const contact = await contactsOperations.addContact(name, email, phone);
         console.log(chalk.yellow("Add new contact"));
         console.log(contact);
         break;
 
       case "remove":
-        const newContacts = await removeContact(id);
+        const newContacts = await contactsOperations.removeContact(id);
         if (newContacts) {
           console.log(chalk.cyan("Found and removed one contact"));
           console.log(newContacts);
